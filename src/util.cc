@@ -9,7 +9,6 @@
 
 #include "src/coding.h"
 #include "blackwidow/util.h"
-#include <cmath>
 
 namespace blackwidow {
 
