@@ -1483,7 +1483,8 @@ uint64_t BlackWidow::GetProperty(const std::string &property) {
 
 Status BlackWidow::GetKeyNum(std::vector<uint64_t>* nums) {
   uint64_t num;
-  std::vector<Redis*> dbs = {strings_db_, lists_db_, hashes_db_, zsets_db_, sets_db_};
+  // NOTE: keep the db order with string, hash, list, zset, set
+  std::vector<Redis*> dbs = {strings_db_, hashes_db_, lists_db_, zsets_db_, sets_db_};
   for (auto iter = dbs.begin(); iter != dbs.end(); ++iter) {
     // check the scanner was stopped or not, before scanning the next db
     if (scan_keynum_exit_) {
