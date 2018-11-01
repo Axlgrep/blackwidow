@@ -296,8 +296,8 @@ Status BlackWidow::HMSet(const Slice& key,
 
 Status BlackWidow::HMGet(const Slice& key,
                          const std::vector<std::string>& fields,
-                         std::vector<std::string>* values) {
-  return hashes_db_->HMGet(key, fields, values);
+                         std::vector<ValueStatus>* vss) {
+  return hashes_db_->HMGet(key, fields, vss);
 }
 
 Status BlackWidow::HGetall(const Slice& key,

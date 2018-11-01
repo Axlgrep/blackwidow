@@ -80,6 +80,14 @@ struct FieldValue {
   }
 };
 
+struct ValueStatus {
+  std::string value;
+  rocksdb::Status status;
+  bool operator == (const ValueStatus& vs) const {
+    return (vs.value == value && vs.status == status);
+  }
+};
+
 struct KeyVersion {
   std::string key;
   int32_t version;
@@ -303,7 +311,7 @@ class BlackWidow {
   // against a non-existing key will return a list of nil values.
   Status HMGet(const Slice& key,
                const std::vector<std::string>& fields,
-               std::vector<std::string>* values);
+               std::vector<ValueStatus>* vss);
 
   // Returns all fields and values of the hash stored at key. In the returned
   // value, every field name is followed by its value, so the length of the
