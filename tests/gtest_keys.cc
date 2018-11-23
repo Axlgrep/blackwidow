@@ -3506,7 +3506,6 @@ TEST_F(KeysTest, ExpireatTest) {
   s = db.SAdd("EXPIREAT_KEY", {"MEMBER"}, &ret);
   ASSERT_TRUE(s.ok());
 
-  uint64_t llen;
   s = db.RPush("EXPIREAT_KEY", {"NODE"}, &llen);
   ASSERT_TRUE(s.ok());
 
