@@ -3500,7 +3500,7 @@ TEST_F(KeysTest, ExpireatTest) {
   s = db.Set("EXPIREAT_KEY", "VALUE");
   ASSERT_TRUE(s.ok());
 
-  s = db.HSet("EXPIREAT_KEY", "FIELD", "VALUE", &ret);
+  s = db.HSet("EXPIREAT_KEY", "EXPIREAT_FIELD", "VALUE", &ret);
   ASSERT_TRUE(s.ok());
 
   s = db.SAdd("EXPIREAT_KEY", {"MEMBER"}, &ret);
