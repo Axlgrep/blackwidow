@@ -3453,7 +3453,7 @@ TEST_F(KeysTest, ExpireatTest) {
   ASSERT_TRUE(s.ok());
 
   // Hashes
-  s = db.HSet("EXPIREAT_KEY", "FIELD", "VALUE", &ret);
+  s = db.HSet("EXPIREAT_KEY", "EXPIREAT_FIELD", "VALUE", &ret);
   ASSERT_TRUE(s.ok());
 
   // Sets
