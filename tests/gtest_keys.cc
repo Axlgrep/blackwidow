@@ -3535,7 +3535,6 @@ TEST_F(KeysTest, ExpireatTest) {
   // ZSets
   s = db.ZCard("EXPIREAT_KEY", &ret);
   ASSERT_TRUE(s.IsNotFound());
-
 }
 
 // Persist
